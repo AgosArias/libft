@@ -6,7 +6,7 @@ CC = gcc
 FLAGS = -Wall -Werror -Wextra
 
 # Archivos fuente y archivos objeto
-SRC = ft_isalpha.c
+SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c
 OBJ = $(SRC:.c=.o)
 
 # Archivo de encabezado
