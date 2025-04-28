@@ -6,11 +6,11 @@ char *ft_strtrim(char const *s1, char const *set)
     int counter;
     int start;
 
-    y = 0;
     x = 0;
     counter = 1;
     while (s1[x] != '\0' && counter == 1)
     {
+        y = 0;
         counter = 0;
         while ( set[y] != '\0')
         {
