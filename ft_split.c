@@ -40,7 +40,7 @@ char **ft_split(char const *s, char c)
             matriz[count - 1] = (char *)malloc(sizeof(char) * (len + 1));
             if (!matriz[count - 1] == NULL)
                 return (NULL);
-            /*copiar los strings dentro del malloc */
+            matriz[count - 1] = s[i];
         }
         else if (s[i] != c)
         {
@@ -53,7 +53,7 @@ char **ft_split(char const *s, char c)
         matriz[count - 1] = (char *)malloc(sizeof(char) * (len + 1));
         if (!matriz[count - 1] == NULL)
             return (NULL);
-        /*copiar la matriz*/
+        matriz[count - 1] = s[i];    
     }
     matriz[count] = NULL;
 
