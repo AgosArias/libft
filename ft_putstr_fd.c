@@ -6,17 +6,18 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:52:09 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/05 17:52:11 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/05 19:19:24 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-    int i; 
-    i = 0;
-    while (s[i] != '\0')
-    {
-        ft_putstr_fd(s[i], fd);
-        i++;
-    }
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		ft_putstr_fd(s[i], fd);
+		i++;
+	}
 }
