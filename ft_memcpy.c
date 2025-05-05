@@ -1,9 +1,11 @@
 void *memcpy(void *dest, const void *src, size_t n)
 { 
+	int	i;
 
-
-    /*         */
-
-    /*memcpy copia n bytes de memoria desde el bloque de memoria apuntado por src hacia el bloque apuntado por dest. 
-    Es una función muy útil cuando necesitas copiar datos de una ubicación de memoria a otra.*/
+	i = 0;
+	while (n > i)
+	{
+		dest[i] = src[i];
+		i++;
+	}
 }
