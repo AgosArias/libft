@@ -6,20 +6,23 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:51:08 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/07 18:33:51 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/07 19:36:13 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(int c)
+#include "libft.h"
+
+size_t	strlen(const char *str)
 {
 	size_t	i;
 
-	while (*c)
+	i = 0;
+	while (*str)
 	{
 		i++;
-		c++;
+		str++;
 	}
 	if (i == 0)
-		return (NULL);
+		return (0);
 	return (i);
 }
