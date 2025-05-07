@@ -6,26 +6,30 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:50:15 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/05 17:50:55 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/07 18:15:58 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
-{
-    char w;
-    int x;
-    int y;
+#include <stdlib.h>
 
-    x = 0;
-    w = malloc;
-    while (s[i] != start)
-        i++;
-    y = i;
-    while (s[i] < (y + len) || s[i] != '\0')
-    {
-        w[i-y] = s[i];
-        i++;
-    }
-    w[i] = '\0'
-    return (w)
+char	*ft_substr(char const *s, unsigned int start, int len)
+{
+	char	w;
+	int		x;
+	int		y;
+
+	x = 0;
+	w = (char *)malloc(sizeof(char) * (len + 1));
+	if (w == NULL)
+		return (NULL);
+	while (s[x] != start)
+		x++;
+	y = x;
+	while (s[x] < (y + len) || s[x] != '\0')
+	{
+		w[x - y] = s[x];
+		x++;
+	}
+	w[x] = '\0';
+	return (w);
 }

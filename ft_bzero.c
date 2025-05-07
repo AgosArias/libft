@@ -6,19 +6,19 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:48:43 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/05 17:48:48 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/07 18:07:35 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_bzero(void *s, size_t len)
+void	ft_bzero(void *s, int len)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (s[i] != '\0' && i < len)
-    {
-        s[i] = 0;
-        i++;
-    }
-    s[i] = '\0';
+	i = 0;
+	while (s[i] != '\0' && i < len)
+	{
+		s[i] = 0;
+		i++;
+	}
+	s[i] = '\0';
 }

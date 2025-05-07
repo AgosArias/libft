@@ -6,13 +6,13 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:50:05 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/05 17:50:06 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/07 18:10:48 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	toupper(int c)
 {
-    if (c >= 97 && c <= 122)
-	    return(c - 32);
-    return (c);
-}   
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
+}

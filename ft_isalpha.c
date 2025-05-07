@@ -6,7 +6,7 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:49:12 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/05 17:49:20 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/07 17:49:57 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@ int	ft_isalpha(int c)
 	if (c <= 90 && c >= 65)
 		return (1);
 	if (c <= 122 && c >= 97)
-		return (1);	
+		return (1);
 	return (0);
 }

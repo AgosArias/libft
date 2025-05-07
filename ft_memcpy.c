@@ -6,11 +6,11 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:49:51 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/05 17:49:54 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/07 18:23:55 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *memcpy(void *dest, const void *src, size_t n)
+void	*memcpy(void *dest, const void *src, size_t n)
 { 
 	int	i;
 

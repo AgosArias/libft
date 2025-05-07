@@ -6,25 +6,25 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:49:46 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/05 19:18:34 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/07 18:23:43 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && i < n)
-    {
-        i++;
-    }
-    if ((s1[i] != '\0' && s2[i] != '\0') || i == n)
-    {
-        return (s1[i] - s2[i]);
-    }
-    else
-    {
-        return (0);
-    }
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && i < n)
+	{
+		i++;
+	}
+	if ((s1[i] != '\0' && s2[i] != '\0') || i == n)
+	{
+		return (s1[i] - s2[i]);
+	}
+	else
+	{
+		return (0);
+	}
 }

@@ -6,11 +6,13 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:52:25 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/05 17:52:27 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/07 18:25:26 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putchar_fd(char c, int fd)
+#include <unistd.h>
+
+void	ft_putchar_fd(char c, int fd)
 {
-    write(fd, &c, 1);
+	write(fd, &c, 1);
 }

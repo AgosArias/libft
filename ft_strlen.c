@@ -6,11 +6,11 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:51:08 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/05 17:51:09 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/07 18:33:51 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t ft_strlen(int c)
+size_t	ft_strlen(int c)
 {
 	size_t	i;
 
@@ -19,6 +19,7 @@ size_t ft_strlen(int c)
 		i++;
 		c++;
 	}
-	if (i == 0) return (NULL);
+	if (i == 0)
+		return (NULL);
 	return (i);
 }

@@ -6,17 +6,17 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:51:51 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/05 19:21:00 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/07 18:26:49 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	**ft_split(char const *s, char c)
 {
-	int	count;
-	int	boolean;
+	int		count;
+	int		boolean;
 	char	**matriz;
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 
 	count = 0;
 	boolean = 0;

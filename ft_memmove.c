@@ -6,12 +6,12 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:49:55 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/05 17:50:00 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/07 18:24:08 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-void *ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	int	i;
 
@@ -19,7 +19,7 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 	while (n > i)
 	{
 		dest[i] = src[i];
-        dest[i] = '\0';
+		dest[i] = '\0';
 		i++;
 	}
 }

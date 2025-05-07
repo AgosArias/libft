@@ -6,11 +6,11 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:49:31 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/05 17:49:34 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/07 18:21:23 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c <= 126 && c >= 32)
 		return (1);

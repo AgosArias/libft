@@ -6,20 +6,20 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:49:41 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/05 17:49:43 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/07 18:23:21 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int i;
+	int	i;
 
-    i = 0;
-    while( i < n)
-    {
-        if(s[i] == c)
-            return &s[i];
-        i++;
-    }
-    return NULL;
+	i = 0;
+	while (i < n)
+	{
+		if (s[i] == c)
+			return (&s[i]);
+		i++;
+	}
+	return (NULL);
 }

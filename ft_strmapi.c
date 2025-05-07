@@ -6,19 +6,19 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:51:05 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/05 17:51:06 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/07 18:33:29 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char   *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    int     i;
+	int	i;
 
-    i = 0;
-    while ( s[i] != '\0')
-    {
-        s[i] = f(i, s[i]);
-        i++;
-    }
-    return ( char)
+	i = 0;
+	while (s[i] != '\0')
+	{
+		s[i] = f(i, s[i]);
+		i++;
+	}
+	return (char)
 }

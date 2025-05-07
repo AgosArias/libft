@@ -6,11 +6,11 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:52:14 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/05 17:52:15 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/07 18:26:17 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putnbr_fd(int n, int fd)
+void    ft_putnbr_fd(int n, int fd)
 {
     char c;
 
