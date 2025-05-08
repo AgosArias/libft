@@ -6,7 +6,7 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:52:22 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/07 18:24:28 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/08 16:20:51 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@ void	*ft_memset(void *s, int c, size_t n)
 	int	i;
 
 	i = 0;
-	while (s[i] != '\0' && i < n)
+	while (s && i < n)
 	{
-		s[i] = c;
+		*s = c;
+		s++;
 		i++;
 	}
-	s[i] = '\0';
+	*s = '\0';
 }
