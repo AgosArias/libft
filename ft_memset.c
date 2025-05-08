@@ -10,15 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*memset(void *ptr, int value, size_t num)
 {
 	int	i;
 
 	i = 0;
-	while (s[i] != '\0' && i < n)
+	while (ptr[i] != '\0' && i < num)
 	{
-		s[i] = c;
+		ptr[i] = value;
 		i++;
 	}
-	s[i] = '\0';
+	ptr[i] = '\0';
 }
