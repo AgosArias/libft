@@ -6,11 +6,12 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:51:24 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/07 18:34:47 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/08 17:10:32 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size){
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
+{
 	int	i;
 	int	j;
 
@@ -18,7 +19,6 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size){
 	i = 0;
 	while (dest[i] != '\0')
 		i++;
-
 	while (src[j] != '\0')
 	{
 		dest[i] = src[j];

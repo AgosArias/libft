@@ -6,7 +6,7 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:50:25 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/07 18:14:54 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/08 17:03:08 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		y = 0;
 		counter = 0;
-		while (set[y] != '\0'  && counter != 1)
+		while (*set && counter != 1)
 		{
 			if (set[y] == s1[x])
 				counter ++;
@@ -36,8 +36,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (s1[x] != '\0')
 		start = x - 1;
 
-
-
 	while (s1[x] != '\0')
 		x++;
 	x--;
@@ -46,7 +44,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		y = 0;
 		counter = 0;
-		while (set[y] != '\0'  && counter != 1)
+		while (*set && counter != 1)
 		{
 			if (set[y] == s1[x])
 				counter ++;
@@ -62,5 +60,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 		w[x] = s1[start + x];
 		x++;
 	}
-
 }
