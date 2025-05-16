@@ -13,6 +13,7 @@ SRC = ft_isalpha.c \
 	  ft_isprint.c \
 	  ft_strlen.c \
 	  ft_memset.c \
+	  ft_bzero.c \
 	  
 
 OBJ = $(SRC:.c=.o)
@@ -43,7 +44,7 @@ clean:
 	$(RM) $(OBJ)
 
 # Eliminar todos los archivos .o y .a
-fclean:
+fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all

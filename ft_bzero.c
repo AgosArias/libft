@@ -10,15 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, int len)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (s[i] != '\0' && i < len)
-	{
-		s[i] = 0;
-		i++;
-	}
-	s[i] = '\0';
+void	ft_bzero(void *s, size_t len)
+{
+	ft_memset(s, 0, len);
 }
