@@ -22,11 +22,22 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
         return (NULL);
 	d = (unsigned char*) dest;
 	s = (unsigned char*) src;
-	i = 0;
-	while (n > i)
+	if(d < s)
 	{
-		d[i] = s[i];
-		i++;
+		i = 0;
+		while (n > i)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	else
+	{
+		while (n >= 0)
+		{
+			d[n] = s[n];
+			n--;
+		}
 	}
 	return (dest);
 }

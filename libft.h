@@ -33,6 +33,7 @@ int	ft_toupper(int c);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
+size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 
 
 #endif
