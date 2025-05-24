@@ -10,16 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strchr(const char *s, int c)
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
 	int	count;
+	char *d;
 
+	d = ( char*) s;
 	count = 0;
-	while (s[count] != '\0')
+	while (d[count])
 	{
-		if (s[count] == c)
-			return (&s[count]);
+		if (d[count] == (char)c)
+			return (&d[count]);
 		count++;
 	}
+	if ((char)c == '\0')
+		return (&d[count]);
 	return (NULL);
 }
