@@ -32,7 +32,7 @@ void	ft_returnChar(int num, int sign, char *c, int i)
 	}
 }
 
-char	*ft_itoa(int n)
+char	*ft_atoi(int n)
 {
 	int		num;
 	int		i;

@@ -27,17 +27,10 @@ SRC = ft_isalpha.c \
 	  ft_strrchr.c \
 	  ft_strncmp.c \
 	  ft_strnstr.c \
-	  # ft_strcmp.c \
-	  ft_strstr.c \
-	  ft_strtrim.c \
-	  ft_substr.c \
-	  ft_itoa.c \
-	  ft_strdup.c \
-	  ft_strjoin.c \
-	  ft_split.c \
-	  ft_memchr.c \
-	  ft_memcmp.c \
-	  ft_strmapi.c \
+	  ft_itoa.c
+
+	  
+	  
 	  
 	  
 OBJ = $(SRC:.c=.o)
