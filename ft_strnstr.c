@@ -10,27 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strnstr(const char *haystack, const char *needle, size_t len)
-{
-	int		x;
-	int		y;
-	char	*puntero;
+#include "libft.h"
 
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	size_t		x;
+	size_t		y;
+	size_t	large;
+
+	if (*needle == '\0')
+		return ((char *)haystack);
+	large = ft_strlen(needle);
+	if (*haystack == '\0' || len == 0 || len < large ||ft_strlen(haystack) < large)
+		return (NULL);
 	x = 0;
 	y = 0;
-	while (haystack[x] != '\0' && y < len)
+	while (haystack && 0 < len && len >= large)
 	{
-		if (haystack[x] == needle[y] && y == 0)
-		{
-			puntero = &haystack[x];
-			y++;
-		}
-		else
-		{
-			y = 0;
-		}
+		if (ft_strncmp(haystack,needle, large) == 0)
+			return ((char *)haystack);
+		haystack++;
+		len--;
 	}
-	if (y == len)
-		return (puntero);
 	return (NULL);
 }
