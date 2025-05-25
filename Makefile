@@ -23,7 +23,18 @@ SRC = ft_isalpha.c \
 	  ft_putendl_fd.c \
 	  ft_strlcpy.c \
 	  ft_memchr.c \
+	  ft_strlcat.c \
+	  ft_strchr.c \
+	  ft_strrchr.c \
+	  ft_strncmp.c \
+	  ft_strnstr.c \
+	  ft_itoa.c \
+	  ft_strdup.c \
 
+	  
+	  
+	  
+	  
 OBJ = $(SRC:.c=.o)
 
 # Archivo de encabezado

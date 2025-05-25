@@ -10,44 +10,62 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_itoa(int n)
-{
-	char	c;
-	int		num;
-	int		i;
-	int		sign;
-	int		x;
+#include "libft.h"
+#include <stdio.h>
 
-	x = 0;
-	sign = 0;
-	i = 0;
-	num = n;
-	if (num < 0)
-	{
-		sign++;
-		num = -num;
-	}
-	while (num < 10)
-	{
-		num = num / 10;
-		i++;
-	}
-	c = (char *)malloc(sizeof(char) * (i + 2 + sign));
-	if (!c == NULL)
-		return (NULL);
-	if (sign == 1)
-	{
-		c[x] = '-';
-		x++;
-	}
-	num = n;
-	c[i + 2] = NULL;
-	c[i + 1] = '\0';
-	while (num < 10)
-	{
-		c[i] = (num % 10) + '0';
-		num = num / 10;
-		i--;
-	}
-	return (c);
+int ft_lenght_int(int n)
+{
+    int i;
+
+    i = 1;
+    while (n >= 10)
+    {
+        n /= 10;
+        i++;
+    }
+    return(i);
+}
+
+char    *ft_itoa(int n)
+{
+    char    *c;
+    long        num;
+    int        i;
+    int        sign;
+
+    if( n == -2147483648)
+    {
+        c = (char *)malloc(sizeof(char) * (12));
+        c[0] = '-';
+        i = 11;
+        while (0 < i)
+        {
+            c[i + 1] = (num % 10) + '0';
+            num = num / 10;
+            i--;
+        }    
+        return(c);
+    }
+
+    sign = 0;
+    num = n;
+    if (num < 0)
+    {
+        sign++;
+        num = -num;
+    }
+    i = ft_lenght_int(num);
+    c = (char *)malloc(sizeof(char) * (i + 1 + sign));
+    if (c == NULL)
+        return (NULL);
+    if (sign == 1)
+        c[0] = '-';  
+    c[i-- +  sign] = '\0';
+    while (sign - 2 < i)
+    {
+        c[i + sign] = (num % 10) + '0';
+        num = num / 10;
+        i--;
+    }    
+    return (c);
 }
