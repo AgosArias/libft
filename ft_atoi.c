@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_returnChar(int num, int sign, char *c, int i)
 {
@@ -32,29 +32,29 @@ void	ft_returnChar(int num, int sign, char *c, int i)
 	}
 }
 
-char	*ft_atoi(int n)
+int ft_atoi(const char *str)
 {
-	int		num;
-	int		i;
-	int		sign;
-	char	c;
+	int num;
+	int i;
 
-	sign = 0;
 	i = 0;
-	num = n;
-	if (num < 0)
+	while (str[i] != '\0')
 	{
-		sign++;
-		num = -num;
-	}
-	while (num < 10)
-	{
-		num = num / 10;
+		if (num == NULL && ft_isdigit(str[i]) == 0)
+		{
+			if (condition)
+			{
+				/* code */
+			}
+			
+			num = str[i] - '0';
+		}
+		else if (num != NULL && ft_isdigit(str[i]) == 0)
+		{
+
+		}
 		i++;
+		
 	}
-	c = (char *)malloc(sizeof(char) * (i + 2 + sign));
-	if (!c == NULL)
-		return (NULL);
-	ft_returnChar(num, sign, c, i);
-	return (c);
+	
 }
