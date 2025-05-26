@@ -12,49 +12,26 @@
 
 #include "libft.h"
 
-void	ft_returnChar(int num, int sign, char *c, int i)
-{
-	int		x;
-
-	x = 0;
-	if (sign == 1)
-	{
-		c[x] = '-';
-		x++;
-	}
-	c[i + 2] = NULL;
-	c[i + 1] = '\0';
-	while (num < 10)
-	{
-		c[i] = (num % 10) + '0';
-		num = num / 10;
-		i--;
-	}
-}
-
 int ft_atoi(const char *str)
 {
 	int num;
 	int i;
 
+	num = 0;	
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (num == NULL && ft_isdigit(str[i]) == 0)
+		if (ft_isdigit(str[i]) && num != 0)
 		{
-			if (condition)
-			{
-				/* code */
-			}
-			
 			num = str[i] - '0';
+			if(i > 0 && str[i-1] == '-')
+				num = -num;
 		}
-		else if (num != NULL && ft_isdigit(str[i]) == 0)
-		{
-
-		}
+		else if(ft_isdigit(str[i]) && num && (num * 10)+ (str[i] - '0') <= INT_MAX && (num * 10)+ (str[i] - '0') >= INT_MIN)
+			num = num * 10 + (str[i] - '0');
+		else if (num != 0)
+			return(num);
 		i++;
-		
 	}
-	
+	return(num);
 }
