@@ -14,24 +14,29 @@
 
 int ft_atoi(const char *str)
 {
-	int num;
-	int i;
+    char ant;
+    int num;
 
-	num = 0;	
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (ft_isdigit(str[i]) && num != 0)
-		{
-			num = str[i] - '0';
-			if(i > 0 && str[i-1] == '-')
-				num = -num;
-		}
-		else if(ft_isdigit(str[i]) && num && (num * 10)+ (str[i] - '0') <= INT_MAX && (num * 10)+ (str[i] - '0') >= INT_MIN)
-			num = num * 10 + (str[i] - '0');
-		else if (num != 0)
-			return(num);
-		i++;
-	}
-	return(num);
+    num = 0;    
+    while (str)
+    {
+        
+        if (ft_isdigit(*str) == 1 && num == 0)
+        {
+            num = *str - '0';
+            if(ant == '-')
+                num = -num;
+        }
+        else if(num != 0 &&  num < 0 && ft_isdigit(*str) == 1  )
+            num = num * 10 - (*str - '0');
+        else if(num != 0 && ft_isdigit(*str) == 1  )
+            num = num * 10 + (*str - '0');
+        else if (num != 0)
+            return(num);
+		else if (*str != '-' && *str != '+')
+			return(0);
+        ant= *str;
+        str++;
+    }
+    return(num);
 }

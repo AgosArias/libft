@@ -14,8 +14,6 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t		x;
-	size_t		y;
 	size_t	large;
 
 	if (*needle == '\0')
@@ -23,8 +21,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	large = ft_strlen(needle);
 	if (*haystack == '\0' || len == 0 || len < large ||ft_strlen(haystack) < large)
 		return (NULL);
-	x = 0;
-	y = 0;
 	while (haystack && 0 < len && len >= large)
 	{
 		if (ft_strncmp(haystack,needle, large) == 0)
