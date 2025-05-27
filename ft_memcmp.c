@@ -23,12 +23,12 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	d = (unsigned char *) s1;
 	s = (unsigned char *) s2;
 	i = 0;
-	while (d[i] == s[i] && d[i] && s[i] && i < n)
+	while (d[i] == s[i] && i < n)
 	{
 		i++;
 	}
-	if ((d[i] && s[i]) || i == n)
-		return (d[i] - s[i]);
-	else
+	if (i == n)
 		return (0);
+	else
+		return (d[i] - s[i]);
 }
