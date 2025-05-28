@@ -10,16 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 char	**ft_split(char const *s, char c)
 {
 	int		count;
 	int		boolean;
 	char	**matriz;
 	int		i;
-	int		len;
+	//int		len;
 
 	count = 0;
 	boolean = 0;
+
+	/*Cuenta palabras*/
 	i = 0;
 	while (s[i] != '\0')
 	{
@@ -32,9 +35,13 @@ char	**ft_split(char const *s, char c)
 			boolean = 0;
 		i++;
 	}
+
 	matriz = (char **)malloc(sizeof(char *) * (count + 1));
-	if (!matriz == NULL)
+	if (matriz == NULL) 
 		return (NULL);
+	/*
+	usar substring para crear las palabras
+	
 	count = 0;
 	boolean = 0;
 	i = 0;
@@ -69,6 +76,6 @@ char	**ft_split(char const *s, char c)
 		matriz[count - 1] = s[i];
 	}
 	matriz[count] = NULL;
-
+	*/
 	return (matriz);
 }

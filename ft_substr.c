@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, int len)
 {
-	char	w;
+	char	*w;
 	int		x;
 	int		y;
 
@@ -22,14 +22,13 @@ char	*ft_substr(char const *s, unsigned int start, int len)
 	w = (char *)malloc(sizeof(char) * (len + 1));
 	if (w == NULL)
 		return (NULL);
-	while (s[x] != start)
-		x++;
-	y = x;
-	while (s[x] < (y + len) || s[x] != '\0')
+	x = ft_strlen(s);
+	y = start;
+	while (y < x || s[x] != '\0')
 	{
 		w[x - y] = s[x];
 		x++;
 	}
-	w[x] = '\0';
+	w[y] = '\0';
 	return (w);
 }

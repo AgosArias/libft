@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		x;
@@ -35,11 +36,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	if (s1[x] != '\0')
 		start = x - 1;
-
-	while (s1[x] != '\0')
-		x++;
-	x--;
-
+	x = ft_strlen(s1) - 1;
 	while (x != 0 && counter == 1)
 	{
 		y = 0;
@@ -55,9 +52,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (x != 0)
 		end = x + 1;
 	x = 0;
+	w = (char *)malloc(sizeof(char) * (end - start + 1));
+	if (w == NULL)
+		return (NULL);
 	while (start + x != end || s1[start] != '\0')
 	{
 		w[x] = s1[start + x];
 		x++;
 	}
+	w[x] = '\0';
+	return (w);
 }

@@ -10,18 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	*calloc(int nmemb, int size)
+void	*ft_calloc(int nmemb, int size)
 {
 	char	*matriz;
-	int		i;
 
-	i = 0;
-	matriz = (char **)malloc(sizeof(char) * nmemb + 1);
-	while (i < nmemb)
-	{
-		matriz[i] = (char *)malloc(sizeof(char) * size + 1);
-		i++;
-	}
+	matriz = (char *)malloc(nmemb * size);
+	if (matriz == NULL)
+		return (NULL);	
+	ft_bzero(matriz, nmemb * size);
+	return (matriz);
 }
