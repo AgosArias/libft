@@ -14,29 +14,31 @@
 
 int ft_atoi(const char *str)
 {
-    char ant;
     int num;
+    int i;
+    int symbol;
 
-    num = 0;    
-    while (str)
+    num = 0;
+    i = 0;    
+    while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+        i++;
+    symbol = 1;
+    if (str[i] == '-')
     {
-        
-        if (ft_isdigit(*str) == 1 && num == 0)
-        {
-            num = *str - '0';
-            if(ant == '-')
-                num = -num;
-        }
-        else if(num != 0 &&  num < 0 && ft_isdigit(*str) == 1  )
-            num = num * 10 - (*str - '0');
-        else if(num != 0 && ft_isdigit(*str) == 1  )
-            num = num * 10 + (*str - '0');
-        else if (num != 0)
-            return(num);
-		else if (*str != '-' && *str != '+')
-			return(0);
-        ant= *str;
-        str++;
+        symbol = -1;
+        i++;
     }
-    return(num);
+    else if (str[i] == '+')
+        i++;
+    while (str[i] != '\0')
+    {        
+        if (ft_isdigit(str[i]) == 1 && num == 0)
+            num = str[i] - '0';
+        else if(ft_isdigit(str[i]) == 1  )
+            num = num * 10 + (str[i] - '0');
+        else
+            return(num*symbol);
+        i++;
+    }
+    return(num*symbol);
 }
