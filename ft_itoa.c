@@ -30,29 +30,26 @@ char	*ft_itoa(int n)
 	char	*c;
 	long	num;
 	int		i;
-	int		sign;
+	int		symbol;
 
-	sign = 0;
+	symbol = 0;
 	num = n;
 	if (num < 0)
 	{
-		sign++;
+		symbol++;
 		num = -num;
-		i = ft_lenght(num) + 1;
 	}
-	else
-		i = ft_lenght(num);
+	i = ft_lenght(num) + symbol;
 	c = (char *)malloc(sizeof(char) * (i + 1));
 	if (c == NULL)
 		return (NULL);
-	if (sign == 1)
+	if (symbol == 1)
 		c[0] = '-';
 	c[i] = '\0';
-	while (sign <= i - 1)
+	while (symbol <= i - 1)
 	{
-		c[i -1] = (num % 10) + '0';
+		c[i-- -1] = (num % 10) + '0';
 		num = num / 10;
-		i--;
 	}
 	return (c);
 }
