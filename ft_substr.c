@@ -27,7 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (w == NULL)
 		return (NULL);
 	x = 0;
-	while ((size_t)x < len  && s[x + start] != '\0')
+	while ((size_t)x < len)
 	{	
 		w[x] = s[x + start];
 		x++;
