@@ -6,11 +6,12 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:51:51 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/07 18:26:49 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/29 17:23:14 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	**ft_split(char const *s, char c)
 {
 	int		count;
@@ -18,12 +19,12 @@ char	**ft_split(char const *s, char c)
 	char	**matriz;
 	int		i;
 	int		len;
+	int		j;
+
 	if (s == NULL)
 		return (NULL);
 	count = 0;
 	boolean = 0;
-
-	/*Cuenta palabras*/
 	i = 0;
 	while (s[i] != '\0')
 	{
@@ -36,13 +37,11 @@ char	**ft_split(char const *s, char c)
 			boolean = 0;
 		i++;
 	}
-
 	matriz = (char **)malloc(sizeof(char *) * (count + 1));
-	if (matriz == NULL) 
+	if (matriz == NULL)
 		return (NULL);
 	i = 0;
 	count = 0;
-
 	while (s[i] != '\0')
 	{
 		if (s[i] != c)
@@ -63,7 +62,7 @@ char	**ft_split(char const *s, char c)
 			}
 			else
 			{
-				int j = 0;
+				j = 0;
 				while (j < len)
 				{
 					matriz[count][j] = s[i + j];
@@ -76,6 +75,5 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 	matriz[count] = NULL;
-
 	return (matriz);
 }
