@@ -14,26 +14,20 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char 	*w;
-	int		x;
-	int		y;
+	char	*w;
 	int		a;
 	int		b;
 
 	b = 0;
 	a = 0;
-	y = 0;
-	x = ft_strlen(s1);
-	y = ft_strlen(s2);
-	w = (char *)malloc(sizeof(char) * (x + y + 1));
+	w = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (w == NULL)
 		return (NULL);
-	while (a != x)
+	while (s1[a] != '\0')
 	{
 		w[a] = s1[a];
 		a++;
 	}
-
 	while (s2[b] != '\0')
 	{
 		w[a + b] = s2[b];
