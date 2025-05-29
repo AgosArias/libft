@@ -12,17 +12,12 @@
 
 #include "libft.h"
 
-char	**ft_split(char const *s, char c)
+int	ft_count_words(char const *s, char c)
 {
-	int		count;
-	int		boolean;
-	char	**matriz;
-	int		i;
-	int		len;
-	int		j;
+	int	count;
+	int	boolean;
+	int	i;
 
-	if (s == NULL)
-		return (NULL);
 	count = 0;
 	boolean = 0;
 	i = 0;
@@ -37,43 +32,51 @@ char	**ft_split(char const *s, char c)
 			boolean = 0;
 		i++;
 	}
-	matriz = (char **)malloc(sizeof(char *) * (count + 1));
+	return (count);
+}
+
+int	ft_fill_matriz(char **matriz, char const *s, int j, char c)
+{
+	int	len;
+
+	len = 0;
+	while (s[len] != '\0' && s[len] != c)
+		len++;
+	matriz[j] = ft_substr(s, 0, len);
+	if (matriz[j] == NULL)
+	{
+		while (j > 0)
+			free(matriz[--j]);
+		free(matriz);
+		return (0);
+	}
+	return (len);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		j;
+	char	**matriz;
+	int		len;
+
+	if (s == NULL)
+		return (NULL);
+	matriz = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
 	if (matriz == NULL)
 		return (NULL);
-	i = 0;
-	count = 0;
-	while (s[i] != '\0')
+	j = 0;
+	while (*s)
 	{
-		if (s[i] != c)
+		if (*s != c)
 		{
-			len = 0;
-			while (s[i + len] != '\0' && s[i + len] != c)
-				len++;
-			matriz[count] = (char *)malloc(sizeof(char) * (len + 1));
-			if (matriz[count] == NULL)
-			{
-				while (count > 0)
-				{
-					free(matriz[count - 1]);
-					count--;
-				}
-				free(matriz);
+			len = ft_fill_matriz(matriz, s, j++, c);
+			if (len == 0)
 				return (NULL);
-			}
-			else
-			{
-				j = 0;
-				while (j < len)
-				{
-					matriz[count][j] = s[i + j];
-					j++;
-				}
-				matriz[count++][j] = '\0';
-			}
-			i += len - 1;
+			s += len;
 		}
-		i++;
+		else
+			s++;
 	}
-	matriz[count] = NULL;
+	matriz[j] = NULL;
 	return (matriz);
 }
