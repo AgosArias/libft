@@ -6,53 +6,53 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:49:35 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/07 18:22:29 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/29 17:20:38 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lenght(long n)
+int	ft_lenght(long n)
 {
-    int i;
+	int	i;
 
-    i = 1;
-    while (n >= 10)
-    {
-        n /= 10;
-        i++;
-    }
-    return(i);
+	i = 1;
+	while (n >= 10)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
 }
 
-char    *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    char    *c;
-    long        num;
-    int        i;
-    int        sign;
+	char	*c;
+	long	num;
+	int		i;
+	int		sign;
 
-    sign = 0;
-    num = n;
-    if (num < 0)
-    {
-        sign++;
-        num = -num;
-        i = ft_lenght(num) +1;
-    }
-    else
-        i = ft_lenght(num);
-    c = (char *)malloc(sizeof(char) * (i + 1 ));
-    if (c == NULL)
-        return (NULL);
-    if (sign == 1)
-        c[0] = '-';  
-    c[i] = '\0';
-    while (sign <= i - 1)
-    {
-        c[i -1] = (num % 10) + '0';
-        num = num / 10;
-        i--;
-    }    
-    return (c);
+	sign = 0;
+	num = n;
+	if (num < 0)
+	{
+		sign++;
+		num = -num;
+		i = ft_lenght(num) + 1;
+	}
+	else
+		i = ft_lenght(num);
+	c = (char *)malloc(sizeof(char) * (i + 1));
+	if (c == NULL)
+		return (NULL);
+	if (sign == 1)
+		c[0] = '-';
+	c[i] = '\0';
+	while (sign <= i - 1)
+	{
+		c[i -1] = (num % 10) + '0';
+		num = num / 10;
+		i--;
+	}
+	return (c);
 }
