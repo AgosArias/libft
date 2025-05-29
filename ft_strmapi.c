@@ -6,7 +6,7 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:51:05 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/07 18:33:29 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/29 16:48:54 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
+	int		i;
 	char	*str;
 
 	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
