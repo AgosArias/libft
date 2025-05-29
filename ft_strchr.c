@@ -6,7 +6,7 @@
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:51:38 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/07 18:27:03 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/05/29 16:40:58 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*d;
 	int		count;
+	char	*d;
 
-	d = (char *) s;
+	d = (char *)s;
 	count = 0;
 	while (d[count])
 	{
