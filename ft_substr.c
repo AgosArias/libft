@@ -16,19 +16,17 @@ char	*ft_substr(char const *s, unsigned int start, int len)
 {
 	char	*w;
 	int		x;
-	int		y;
+	unsigned int		y;
 
 	x = 0;
+	if(len == 0 || s == NULL || start >= (unsigned int)ft_strlen(s))
+		return (ft_strdup(""));
 	w = (char *)malloc(sizeof(char) * (len + 1));
 	if (w == NULL)
 		return (NULL);
-	x = ft_strlen(s);
 	y = start;
-	while (y < x || s[x] != '\0')
-	{
-		w[x - y] = s[x];
-		x++;
-	}
-	w[y] = '\0';
+	while (y < len + start && s[y] != '\0')
+		w[x++] = s[y];
+	w[x] = '\0';
 	return (w);
 }
