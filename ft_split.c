@@ -17,8 +17,9 @@ char	**ft_split(char const *s, char c)
 	int		boolean;
 	char	**matriz;
 	int		i;
-	//int		len;
-
+	int		len;
+	if (s == NULL)
+		return (NULL);
 	count = 0;
 	boolean = 0;
 
@@ -39,43 +40,42 @@ char	**ft_split(char const *s, char c)
 	matriz = (char **)malloc(sizeof(char *) * (count + 1));
 	if (matriz == NULL) 
 		return (NULL);
-	/*
-	usar substring para crear las palabras
-	
-	count = 0;
-	boolean = 0;
 	i = 0;
-	len = 1;
+	count = 0;
+
 	while (s[i] != '\0')
 	{
-		if (s[i] != c && boolean == 0)
+		if (s[i] != c)
 		{
-			boolean = 1;
-			count++;
-			len = 1;
-		}
-		else if (s[i] == c && boolean == 1)
-		{
-			boolean = 0;
-			matriz[count - 1] = (char *)malloc(sizeof(char) * (len + 1));
-			if (!matriz[count - 1] == NULL)
+			len = 0;
+			while (s[i + len] != '\0' && s[i + len] != c)
+				len++;
+			matriz[count] = (char *)malloc(sizeof(char) * (len + 1));
+			if (matriz[count] == NULL)
+			{
+				while (count > 0)
+				{
+					free(matriz[count - 1]);
+					count--;
+				}
+				free(matriz);
 				return (NULL);
-			matriz[count - 1] = s[i];
-		}
-		else if (s[i] != c)
-		{
-			len++;
+			}
+			else
+			{
+				int j = 0;
+				while (j < len)
+				{
+					matriz[count][j] = s[i + j];
+					j++;
+				}
+				matriz[count++][j] = '\0';
+			}
+			i += len - 1;
 		}
 		i++;
 	}
-	if (len != 0)
-	{
-		matriz[count - 1] = (char *)malloc(sizeof(char) * (len + 1));
-		if (!matriz[count - 1] == NULL)
-			return (NULL);
-		matriz[count - 1] = s[i];
-	}
 	matriz[count] = NULL;
-	*/
+
 	return (matriz);
 }
