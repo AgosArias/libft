@@ -41,7 +41,10 @@ SRC = ft_isalpha.c \
 	  ft_strmapi.c\
 	  ft_striteri.c \
 	  
+BONUS_SRC =  ft_lstnew.c
+
 OBJ = $(SRC:.c=.o)
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 # Archivo de encabezado
 INCLUDE = libft.h
@@ -51,7 +54,7 @@ AR = ar rcs
 RM = rm -f
 
 # Indica que las siguientes reglas no son archivos reales
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
 
 # Regla que por defecto compila todo
 all: $(NAME)
@@ -66,7 +69,7 @@ $(NAME): $(OBJ)
 
 # Regla para eliminar todos los archivos objetos creados
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(BONUS_OBJ)
 
 # Eliminar todos los archivos .o y .a
 fclean: clean
@@ -74,3 +77,6 @@ fclean: clean
 
 re: fclean all
 
+# Regla para compilar el bonus
+bonus: $(OBJ) $(BONUS_OBJ)
+	$(AR) $(NAME) $(BONUS_OBJ)
